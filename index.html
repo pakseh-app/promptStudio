@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>PromptForge AI v5</title>
+
+<meta
+name="description"
+content="Professional AI Prompt Generator">
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================================= -->
+<!-- NAVBAR -->
+<!-- ========================================= -->
+
+<header class="navbar">
+
+<div class="logo">
+
+<div class="logo-icon">
+
+⚡
+
+</div>
+
+<div>
+
+<h2>Prompt Generator</h2>
+
+<p>@PAKSEH</p>
+
+</div>
+
+</div>
+
+<nav id="mainNav">
+
+<a href="#"
+class="nav-link active"
+data-page="home">
+
+🏠 Home
+
+</a>
+
+<a href="#"
+class="nav-link"
+data-page="composer">
+
+✨ Composer
+
+</a>
+
+<a href="#"
+class="nav-link"
+data-page="templates">
+
+📚 Templates
+
+</a>
+
+<a href="#"
+class="nav-link"
+data-page="history">
+
+🕘 History
+
+</a>
+
+<a href="#"
+class="nav-link"
+data-page="settings">
+
+⚙ Settings
+
+</a>
+
+<a href="#"
+class="nav-link"
+data-page="about">
+
+ℹ About
+
+</a>
+
+</nav>
+
+<div class="navbar-right">
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ========================================= -->
+<!-- MAIN APP -->
+<!-- ========================================= -->
+
+<main id="app">
+
+<!-- ========================================= -->
+<!-- HOME PAGE -->
+<!-- ========================================= -->
+
+<section
+id="home-page"
+class="page active-page">
+
+<div class="hero">
+
+<div class="hero-badge">
+
+🚀 PromptForge AI v5
+
+</div>
+
+<h1>
+
+Generate Professional AI Prompt
+
+</h1>
+
+<p>
+
+Buat prompt profesional untuk ChatGPT,
+Gemini, Leonardo AI,
+Midjourney, Ideogram,
+Flux dan AI lainnya.
+
+</p>
+
+<div class="hero-buttons">
+
+<button
+class="primary-btn"
+data-open="composer">
+
+✨ Mulai Membuat Prompt
+
+</button>
+
+<button
+class="secondary-btn"
+data-open="templates">
+
+📚 Lihat Template
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- COMPOSER PAGE START -->
+<!-- ========================================= -->
+
+<section
+id="composer-page"
+class="page">
+
+<div class="container">
+
+    <!-- ===================== -->
+    <!-- LEFT PANEL -->
+    <!-- ===================== -->
+
+    <div class="left-panel">
+
+        <!-- INPUT CARD -->
+
+        <section class="card">
+
+            <h2>💬 Apa yang ingin Anda desain?</h2>
+
+            <textarea
+                id="idea"
+                placeholder="Contoh:
+
+Poster promosi bakso pedas modern warna merah hitam untuk media sosial dengan gaya premium dan realistis."></textarea>
+
+            <div class="grid-2">
+
+                <div class="form-group">
+
+                    <label>Kategori</label>
+
+                    <select id="category">
+
+                        <option>Auto Detect</option>
+                        <option>Poster</option>
+                        <option>Banner</option>
+                        <option>Spanduk</option>
+                        <option>Flyer</option>
+                        <option>Thumbnail</option>
+                        <option>Logo</option>
+                        <option>Undangan</option>
+                        <option>Kemasan</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Style</label>
+
+                    <select id="style">
+
+                        <option>Auto Detect</option>
+                        <option>Modern</option>
+                        <option>Luxury</option>
+                        <option>Minimal</option>
+                        <option>Futuristic</option>
+                        <option>3D Cartoon</option>
+                        <option>Photorealistic</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Ukuran</label>
+
+                    <select id="size">
+
+                        <option>Auto Detect</option>
+                        <option>A4</option>
+                        <option>A3</option>
+                        <option>1080x1350</option>
+                        <option>1080x1920</option>
+                        <option>Banner</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>AI Target</label>
+
+                    <select id="ai">
+
+                        <option>ChatGPT</option>
+                        <option>Gemini</option>
+                        <option>Claude</option>
+                        <option>Leonardo AI</option>
+                        <option>Midjourney</option>
+                        <option>Ideogram</option>
+                        <option>Flux</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button
+                id="generate"
+                class="generate-btn">
+
+                ✨ Generate Professional Prompt
+
+            </button>
+
+        </section>
+
+        <!-- SMART DETECT -->
+
+        <section class="card">
+
+            <h2>🧠 Smart Detect</h2>
+
+            <div class="detect-grid">
+
+                <div class="detect-box">
+
+                    <span>Kategori</span>
+
+                    <strong id="detectCategory">-</strong>
+
+                </div>
+
+                <div class="detect-box">
+
+                    <span>Style</span>
+
+                    <strong id="detectStyle">-</strong>
+
+                </div>
+
+                <div class="detect-box">
+
+                    <span>Warna</span>
+
+                    <strong id="detectColor">-</strong>
+
+                </div>
+
+                <div class="detect-box">
+
+                    <span>Target</span>
+
+                    <strong id="detectAudience">-</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- QUALITY -->
+
+        <section class="card">
+
+            <h2>⭐ Prompt Quality</h2>
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    id="qualityBar"></div>
+
+            </div>
+
+            <h3 id="qualityText">
+
+                0%
+
+            </h3>
+
+            <p>
+
+                Semakin lengkap deskripsi Anda,
+                semakin profesional prompt yang dihasilkan.
+
+            </p>
+
+        </section>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- RIGHT PANEL -->
+    <!-- ===================== -->
+
+    <div class="right-panel">
+
+        <section class="card output-card">
+
+            <div class="output-header">
+
+                <h2>📄 Professional Prompt</h2>
+
+                <span class="status">
+
+                    Ready
+
+                </span>
+
+            </div>
+
+            <textarea
+                id="output"
+                readonly
+                placeholder="Prompt profesional akan muncul di sini..."></textarea>
+
+            <div class="button-group">
+
+                <button id="copy">
+
+                    📋 Copy
+
+                </button>
+
+                <button id="download">
+
+                    ⬇ Download TXT
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>📊 Prompt Analysis</h2>
+
+            <ul class="analysis-list">
+
+                <li>✅ Visual Hierarchy</li>
+                <li>✅ Typography Recommendation</li>
+                <li>✅ Color Palette Suggestion</li>
+                <li>✅ Layout Recommendation</li>
+                <li>✅ Printing Specification</li>
+                <li>✅ Negative Prompt</li>
+                <li>✅ AI Optimization</li>
+                <li>✅ Camera & Lighting</li>
+
+            </ul>
+
+        </section>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- TEMPLATES PAGE START -->
+<!-- ========================================= -->
+<!-- TEMPLATES PAGE -->
+<!-- ========================================= -->
+
+<section
+id="templates-page"
+class="page">
+
+<div class="templates-wrapper">
+
+    <div class="page-header">
+
+        <h1>📚 Prompt Templates</h1>
+
+        <p>
+
+            Pilih template profesional untuk mempercepat pembuatan prompt.
+
+        </p>
+
+    </div>
+
+    <div class="template-toolbar">
+
+        <input
+        type="text"
+        id="templateSearch"
+        placeholder="🔍 Cari template...">
+
+        <select id="templateCategory">
+
+            <option value="all">Semua Kategori</option>
+
+            <option>Poster</option>
+            <option>Banner</option>
+            <option>Logo</option>
+            <option>Flyer</option>
+            <option>Thumbnail</option>
+            <option>Undangan</option>
+            <option>Kemasan</option>
+
+        </select>
+
+    </div>
+
+    <div
+    id="templateGrid"
+    class="template-grid">
+
+        <!-- templates.js akan mengisi otomatis -->
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- HISTORY PAGE -->
+<!-- ========================================= -->
+
+<section
+id="history-page"
+class="page">
+
+<div class="page-header">
+
+<h1>🕘 Prompt History</h1>
+
+<p>
+
+Semua prompt yang pernah dibuat akan muncul di sini.
+
+</p>
+
+</div>
+
+<div
+id="historyPageList">
+
+<p>
+
+Belum ada riwayat.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SETTINGS PAGE -->
+<!-- ========================================= -->
+
+<section
+id="settings-page"
+class="page">
+
+<div class="page-header">
+
+<h1>⚙ Settings</h1>
+
+<p>
+
+Pengaturan PromptForge AI.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Theme</h2>
+
+<p>
+
+Gunakan tombol bulan di kanan atas untuk mengganti tema.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Versi</h2>
+
+<p>
+
+PromptForge AI v5
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- ABOUT PAGE -->
+<!-- ========================================= -->
+
+<section
+id="about-page"
+class="page">
+
+<div class="page-header">
+
+<h1>ℹ About</h1>
+
+<p>
+
+PromptForge AI merupakan aplikasi pembuat prompt profesional
+untuk berbagai AI Generator.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Developer</h2>
+
+<p>
+
+Created by Pakseh
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Supported AI</h2>
+
+<ul class="analysis-list">
+
+<li>✅ ChatGPT</li>
+<li>✅ Gemini</li>
+<li>✅ Claude</li>
+<li>✅ Midjourney</li>
+<li>✅ Leonardo AI</li>
+<li>✅ Ideogram</li>
+<li>✅ Flux</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+
+⚡ PromptForge AI v5
+
+</h3>
+
+<p>
+
+Created by Pakseh
+
+</p>
+
+<p>
+
+Professional AI Prompt Generator
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- ========================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================= -->
+
+<script src="js/composer.js"></script>
+
+<script src="database.js"></script>
+<script src="detector.js"></script>
+<script src="js/templates.js"></script>
+
+<script src="generator.js"></script>
+<script src="quality.js"></script>
+<script src="history.js"></script>
+
+<script src="copy.js"></script>
+<script src="theme.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
