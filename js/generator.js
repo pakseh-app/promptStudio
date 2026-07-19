@@ -112,26 +112,20 @@ function generateProfessionalPrompt(){
 
 
         renderOutput(
+    prompt
+);
 
-            prompt
+if (typeof updateSmartDetect === "function") {
+    updateSmartDetect(detect);
+}
 
-        );
+savePromptHistory(
+    prompt
+);
 
-
-
-        savePromptHistory(
-
-            prompt
-
-        );
-
-
-
-        updatePromptQuality(
-
-            prompt
-
-        );
+updatePromptQuality(
+    prompt
+);
 
 
 
