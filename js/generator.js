@@ -314,8 +314,7 @@ function composePrompt(
 
     let output = [];
 
-    output.push("TEST PAKSEH 123456");
-    output.push("");
+   
 
     /*
         FINAL SMART VALUES
